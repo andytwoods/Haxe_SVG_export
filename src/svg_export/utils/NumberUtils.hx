@@ -1,4 +1,4 @@
-package src.svg_export;
+package svg_export.utils;
 
 /**
  * ...

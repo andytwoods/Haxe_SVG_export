@@ -1,5 +1,9 @@
 package src.svg_export;
 import hxColorToolkit.ColorToolkit;
+import svg_export.constants.GradientType;
+import svg_export.constants.InterpolationMethod;
+import svg_export.constants.LineScaleMode;
+import svg_export.constants.SpreadMethod;
 
 /**
  * ...
@@ -60,6 +64,16 @@ class SVGShapeExporter extends DefaultSVGShapeExporter
 		override public function beginBitmapFill(bitmapId:Int, matrix:Array<Array<Float>> = null, repeat:Bool = true, smooth:Bool = false) {
 			throw("Bitmap fills are not yet supported for shape export.");
 		}
+		
+		
+		public function drawRect (x:Float, y:Float, width:Float, height:Float):Void {
+		
+		
+		
+		
+	
+	}
+		
 		
 		override public function lineStyle(thickness:Float = 1, color:Int = 0, alpha:Float = 1.0, pixelHinting:Bool = false, scaleMode:String = LineScaleMode.NORMAL, startCaps:String = '', endCaps:String = '', joints:String = '', miterLimit:Float = 3) {
 			finalizePath();

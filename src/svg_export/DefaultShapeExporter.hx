@@ -1,4 +1,7 @@
 package src.svg_export;
+import svg_export.constants.InterpolationMethod;
+import svg_export.constants.LineScaleMode;
+import svg_export.constants.SpreadMethod;
 
 /**
  * ...
