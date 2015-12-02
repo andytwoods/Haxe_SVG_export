@@ -90,7 +90,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "173",
+			build: "228",
 			company: "",
 			file: "HaxeSVGexport",
 			fps: 60,

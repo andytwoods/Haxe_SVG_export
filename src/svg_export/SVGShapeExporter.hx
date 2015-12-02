@@ -4,6 +4,7 @@ import svg_export.constants.GradientType;
 import svg_export.constants.InterpolationMethod;
 import svg_export.constants.LineScaleMode;
 import svg_export.constants.SpreadMethod;
+import svg_export.utils.StringUtils;
 
 /**
  * ...
@@ -27,17 +28,18 @@ class SVGShapeExporter extends DefaultSVGShapeExporter
 
 
 	override public function beginShape() {
-		svg = Xml.parse('<svg Xmlns='+s['uri']+' Xmlns:xlink='+xlink['uri']+'><defs /><g /></svg>');
+		svg = Xml.parse("<svg Xmlns='" + s['uri'] + "' Xmlns:xlink='" + xlink['uri'] + "'><defs /><g /></svg>");
 		gradients = new Array<String>();
 	}
 	
 	override public function beginFill(color:Int, alpha:Float = 1.0) {
 		finalizePath();
-		path.set('stroke', 'none');
+
+		path.firstChild().set('stroke','none');
 		
-		path.set('fill', Std.string(ColorToolkit.toHex(color)));
+		path.firstChild().set('fill', Std.string(ColorToolkit.toHex(color)));
 		if (alpha != 1) { 
-			path.set('fill-opacity', Std.string(alpha));			
+			path.firstChild().set('fill-opacity', Std.string(alpha));			
 			}
 	}
 		
@@ -125,15 +127,15 @@ class SVGShapeExporter extends DefaultSVGShapeExporter
 
 		
 		override function finalizePath() {
-			throw "not implemented";
-			/*
-			if(path && pathData != "") {
-				path.@d = StringUtils.trim(pathData);
-				svg.s::g.appendChild(path);
+			//throw "not implemented";
+			
+			if(path != null) {
+				path.set("d", StringUtils.trim(pathData));
+				svg.addChild(path);
 			}
-			path = <path />;
+			
+			path = Xml.parse("<path stroke='none' />");
 			super.finalizePath();
-			*/
 		}
 		
 		

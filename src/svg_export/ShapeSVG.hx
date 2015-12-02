@@ -10,7 +10,7 @@ import svg_export.constants.GradientType;
  */
 class ShapeSVG extends Shape
 {
-	var svg:SVGShapeExporter;
+	var svg:SVGShapeExporter = new SVGShapeExporter();
 	
 	@:noCompletion private var __g:Layer;
 	
@@ -32,6 +32,10 @@ class ShapeSVG extends Shape
 		
 		return __g;
 		
+	}
+	
+	public function export():Xml {
+		return svg.svg;
 	}
 	
 }
@@ -66,12 +70,12 @@ class Layer  {
 	
 	
 	public function endFill():Void {
-		//svg.endFill();
+		svg.endFill();
 		gra.endFill();
 	}
 
 	public function lineStyle(thickness:Float = 0, color:Int = 0, alpha:Float = 1.0, pixelHinting:Bool = false, scaleMode:String = "normal", startCaps:String = null, endCaps:String = null, joints:String = null, miterLimit:Null<Float> = null):Void {
-		//svg.lineStyle(thickness, color, alpha, pixelHinting, scaleMode, startCaps, endCaps, joints, miterLimit);
+		svg.lineStyle(thickness, color, alpha, pixelHinting, scaleMode, startCaps, endCaps, joints, miterLimit);
 		gra.lineStyle(thickness, color, alpha);
 		
 	}
@@ -84,17 +88,17 @@ class Layer  {
 	}
 
 	public function moveTo(x:Float, y:Float):Void {
-		//svg.moveTo(x, y);
+		svg.moveTo(x, y);
 		gra.moveTo(x, y);
 	}
 	
 	public function lineTo(x:Float, y:Float):Void {
-		//svg.lineTo(x, y);
+		svg.lineTo(x, y);
 		gra.lineTo(x, y);		
 	}
 
 	public function curveTo(controlX:Float, controlY:Float, anchorX:Float, anchorY:Float):Void {
-		//svg.curveTo(controlX, controlY, anchorX, anchorX);
+		svg.curveTo(controlX, controlY, anchorX, anchorX);
 		gra.curveTo(controlX, controlY, anchorX, anchorX);
 	}
 	

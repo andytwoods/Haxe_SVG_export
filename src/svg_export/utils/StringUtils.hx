@@ -110,6 +110,8 @@ class StringUtils
 		private static inline var SIGN_POS:Int = -1;
 		private static inline var SIGN_NEG:Int = 1;
 		
+		
+		/*
 		public static function printf(format:String, args:Array<String>):String {
 			var result:String = "";
 			var indexValue:Int = 0;
@@ -388,27 +390,7 @@ class StringUtils
 							
 							result += valueStr;
 
-							///////////////////////////
-							// debug
-							///////////////////////////
-							/*
-							var d:String = "";
-							d += "type:" + type + " ";
-							d += "width:" + width + " ";
-							d += "precision:" + precision + " ";
-							d += "flags:";
-							var da:Array = [];
-							if(flagSign) { da.push("sign"); }
-							if(flagLeftAlign) { da.push("leftalign"); }
-							if(flagAlternate) { da.push("alternate"); }
-							if(flagLeftPad) { da.push("leftpad"); }
-							if(flagZeroPad) { da.push("zeropad"); }
-							d += ((da.length == 0) ? "-" : da.toString()) + " ";
-							d += "index:" + indexValue + " ";
-							d += "value:" + value + " ";
-							d += "result:" + valueStr;
-							trace(d);
-							*/
+							
 							
 						}
 					} else {
@@ -420,6 +402,8 @@ class StringUtils
 			}
 			return result;
 		}
+		
+		*/
 		
 		private static function getIndex(format:String):Int {
 			var result:Int = 0;

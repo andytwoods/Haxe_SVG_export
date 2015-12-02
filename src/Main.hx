@@ -27,6 +27,8 @@ class Main extends Sprite
 		s.g.lineTo(0, 0);
 		s.g.endFill();
 		
+		trace(s.export());
+		
 	}
 
 }
